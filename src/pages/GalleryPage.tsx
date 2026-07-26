@@ -1,15 +1,13 @@
 
 // src/pages/GalleryPage.tsx
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { usePhotos } from '../hooks/usePhotos';
 import { GalleryGrid } from '../components/GalleryGrid';
-import { LiveFeed } from '../components/LiveFeed';
 import { Photo } from '../entities/Photo';
 
 export function GalleryPage() {
   const { photos, loading } = usePhotos();
-  const [viewMode, setViewMode] = useState<'grid' | 'live'>('grid');
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
   return (
@@ -18,32 +16,14 @@ export function GalleryPage() {
         <h2>Our Moments</h2>
         <div className="gallery-controls">
           <span className="gallery-count">{photos.length} photos</span>
-          <div className="view-toggle">
-            <button
-              className={viewMode === 'grid' ? 'active' : ''}
-              onClick={() => setViewMode('grid')}
-            >
-              Grid
-            </button>
-            <button
-              className={viewMode === 'live' ? 'active' : ''}
-              onClick={() => setViewMode('live')}
-            >
-              Live
-            </button>
-          </div>
         </div>
       </div>
 
-      {viewMode === 'grid' ? (
-        <GalleryGrid
-          photos={photos}
-          loading={loading}
-          onPhotoClick={(photo) => setSelectedPhoto(photo)}
-        />
-      ) : (
-        <LiveFeed />
-      )}
+      <GalleryGrid
+        photos={photos}
+        loading={loading}
+        onPhotoClick={(photo) => setSelectedPhoto(photo)}
+      />
 
       {selectedPhoto && (
         <div className="photo-viewer" onClick={() => setSelectedPhoto(null)}>

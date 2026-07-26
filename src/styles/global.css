@@ -258,29 +258,6 @@ body::before {
   object-fit: cover;
 }
 
-.preview-stamp {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background: rgba(255,255,255,0.85);
-  padding: 6px 12px;
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-}
-
-.stamp-title {
-  display: block;
-  font-weight: 600;
-  font-size: 12px;
-  color: #d4a0b0;
-}
-
-.stamp-date {
-  display: block;
-  font-size: 10px;
-  color: #5a4a4a;
-}
-
 .preview-bottom {
   flex-shrink: 0;
   width: 100%;

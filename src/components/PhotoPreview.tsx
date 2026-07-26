@@ -35,16 +35,6 @@ export function PhotoPreview({
         {imageUrl && (
           <img src={imageUrl} alt="Captured moment" />
         )}
-        <div className="preview-stamp">
-          <span className="stamp-title">Nor &amp; Partner</span>
-          <span className="stamp-date">
-            {new Date().toLocaleDateString('en-US', {
-              month: 'long', day: 'numeric', year: 'numeric'
-            })} • {new Date().toLocaleTimeString('en-US', {
-              hour: 'numeric', minute: '2-digit'
-            })}
-          </span>
-        </div>
       </div>
 
       <div className="preview-bottom">
