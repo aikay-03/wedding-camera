@@ -34,8 +34,8 @@ export function CameraPage() {
   return (
     <div className="camera-page">
       <div className="camera-header">
-        <h1>Nor &amp; Partner</h1>
-        <p>Capture the moment ❤️</p>
+        <h1>BloomLens 💕</h1>
+        <p>Nikah Ceremony Izzati X Afif</p>
       </div>
 
       <div className="viewfinder-wrapper">
